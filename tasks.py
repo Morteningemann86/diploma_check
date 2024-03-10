@@ -1,6 +1,5 @@
 from openai import OpenAI
 import base64
-import requests
 import json
 import os
 from pathlib import Path
@@ -75,7 +74,7 @@ def process_image(filename):
 def move_file(filename, type_of_document, name_university):
     original_file_path = os.path.join('input', filename)
     new_file_name = f'{type_of_document} - {name_university}'
-    output_folder = 'output'
+    output_folder = 'output/processed_images'
 
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
